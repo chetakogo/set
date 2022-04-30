@@ -8,15 +8,15 @@ test('add new character with error', () => {
 
 test('add new character', () => {
   const character = new Team();
-  character.addAll('Magician', 'Deamon', 'Undead')
-  expect(character).toEqual( {"Magician", "Deamon", "Undead"})
-}
+  character.addAll('Magician', 'Deamon', 'Undead');
+  expect(character.toArray()).toEqual(['Magician', 'Deamon', 'Undead']);
+});
 
 test('array', () => {
   const character = new Team();
   character.add('Magician');
   character.add('Deamon');
   character.add('Undead');
-  character.toArray();
-  expect(character).toEqual(['Magician', 'Deamon', 'Undead']);
+  const array = character.toArray();
+  expect(array).toEqual(['Magician', 'Deamon', 'Undead']);
 });
